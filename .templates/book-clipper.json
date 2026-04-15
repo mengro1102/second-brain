@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Book",
+  "behavior": "create",
+  "noteContentFormat": "## 핵심 요약\n\n> 클리핑 후 직접 작성하거나 비워두세요.\n\n---\n\n## 내용\n\n{{content}}",
+  "properties": [
+    { "name": "title", "value": "{{title}}", "type": "text" },
+    { "name": "source", "value": "{{url}}", "type": "text" },
+    { "name": "author", "value": "{{author|split:\", \"|wikilink|join}}", "type": "multitext" },
+    { "name": "published", "value": "{{published}}", "type": "date" },
+    { "name": "created", "value": "{{date}}", "type": "date" },
+    { "name": "description", "value": "{{description}}", "type": "text" },
+    { "name": "type", "value": "book", "type": "text" },
+    { "name": "tags", "value": "clippings, book", "type": "multitext" },
+    { "name": "status", "value": "inbox", "type": "text" }
+  ],
+  "triggers": [],
+  "noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}}_{{title|slice:0,80}}",
+  "path": "01_raw/articles"
+}

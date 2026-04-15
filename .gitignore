@@ -1,0 +1,23 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+.trash/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# 대용량 파일 (PDF 원본은 Git LFS 또는 제외)
+# 01_raw/papers/**/*.pdf
+
+# Graphify 캐시 (재생성 가능)
+00_graphify-out/graph.json
+00_graphify-out/graph.html
+00_graphify-out/GRAPH_REPORT.md
