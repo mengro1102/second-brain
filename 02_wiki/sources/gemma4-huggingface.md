@@ -11,7 +11,7 @@ status: ingested
 # Welcome Gemma 4: Frontier multimodal intelligence on device
 
 - 출처: https://huggingface.co/blog/gemma4
-- 소속: [[Google DeepMind]], Hugging Face
+- 소속: [[google-deepmind|Google DeepMind]], Hugging Face
 
 ## Kernel
 
@@ -23,7 +23,7 @@ Gemma 4는 Google DeepMind의 오픈소스 멀티모달 SLM 패밀리. Apache 2 
 2. 네이티브 멀티모달: 이미지, 오디오, 비디오를 외부 변환기 없이 직접 처리
 3. 256K 컨텍스트 윈도우 (31B, 26B-A4B)
 4. 핵심 아키텍처: Local-Global Attention(sliding window + full context), Dual RoPE, PLE, Shared KV Cache
-5. [[MoE]]: 26B 파라미터 중 4B만 활성화 → 로컬 추론 효율 극대화
+5. [[moe|MoE]]: 26B 파라미터 중 4B만 활성화 → 로컬 추론 효율 극대화
 6. Function Calling, Thinking 모드 지원 → 에이전틱 워크플로우
 
 > [!causal] 인과 관계
@@ -54,4 +54,4 @@ Gemma 4는 Google DeepMind의 오픈소스 멀티모달 SLM 패밀리. Apache 2 
 
 ## 관련 엔티티
 
-[[Google DeepMind]], [[gemma4]]
+[[google-deepmind|Google DeepMind]], [[gemma4]]

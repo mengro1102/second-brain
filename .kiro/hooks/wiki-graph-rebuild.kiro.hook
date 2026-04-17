@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "위키 그래프 자동 재빌드",
+  "description": "02_wiki/ 폴더의 마크다운 파일이 수정되면 graph.json을 자동으로 재빌드합니다.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "02_wiki/**/*.md"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "python3 .scripts/build_graph.py",
+    "timeout": 30
+  }
+}

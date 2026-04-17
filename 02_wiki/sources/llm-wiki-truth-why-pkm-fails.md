@@ -20,7 +20,7 @@ PKM 시스템의 90%가 3개월 안에 죽는 이유는 "입력 마찰 > 검색 
 ## 핵심 주장
 
 1. 입력 마찰 > 검색 가치 = 시스템 사망
-2. [[Andrej Karpathy]]의 관점 전환: LLM을 "지식의 능동적 연결·활성화 인터페이스"로 재정의
+2. [[andrej-karpathy|Andrej Karpathy]]의 관점 전환: LLM을 "지식의 능동적 연결·활성화 인터페이스"로 재정의
 3. 3레이어 아키텍처: 캡처(Obsidian) → 검색([[rag]]) → 연결([[mcp]])
 4. 지식의 복리 효과: 노트가 쌓일수록 시스템이 강해짐
 5. 한국어 환경: BGE-M3 임베딩, 형태소 분석 기반 청킹 필수
@@ -45,4 +45,4 @@ PKM 시스템의 90%가 3개월 안에 죽는 이유는 "입력 마찰 > 검색 
 
 ## 관련 엔티티
 
-[[Andrej Karpathy]], [[Obsidian]]
+[[andrej-karpathy|Andrej Karpathy]], [[obsidian|Obsidian]]

@@ -20,4 +20,4 @@ sources: [raw/papers/discovering-sota-rl-algorithms/discovering-sota-rl-algorith
 
 ## 관련
 
-[[강화학습]], [[메타러닝]], [[02_wiki/sources/discovering-sota-rl-algorithms]]
+[[reinforcement-learning|강화학습]], [[meta-learning|메타러닝]], [[discovering-sota-rl-algorithms]]

@@ -19,9 +19,9 @@ sources: [raw/papers/discovering-sota-rl-algorithms/discovering-sota-rl-algorith
 [[discorl]]은 메타러닝의 극단적 적용 — RL 업데이트 규칙 자체를 메타네트워크로 표현하고 다양한 환경 경험으로부터 발견.
 
 > [!causal] 인과 관계
-> [[메타러닝]] →(가능하게 함)→ [[discorl]]의 RL 규칙 자동 발견
-> 신뢰도: 높음 | 출처: [[02_wiki/sources/discovering-sota-rl-algorithms]]
+> [[meta-learning|메타러닝]] →(가능하게 함)→ [[discorl]]의 RL 규칙 자동 발견
+> 신뢰도: 높음 | 출처: [[discovering-sota-rl-algorithms]]
 
 ## 관련
 
-[[강화학습]], [[부트스트래핑]], [[02_wiki/sources/discovering-sota-rl-algorithms]]
+[[reinforcement-learning|강화학습]], [[bootstrapping|부트스트래핑]], [[discovering-sota-rl-algorithms]]

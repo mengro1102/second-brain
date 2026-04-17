@@ -16,8 +16,8 @@ sources: [raw/papers/discovering-sota-rl-algorithms/discovering-sota-rl-algorith
 
 ## 관련 소스
 
-- [[02_wiki/sources/discovering-sota-rl-algorithms]] — DiscoRL: 메타러닝으로 RL 규칙 자동 발견
+- [[discovering-sota-rl-algorithms]] — DiscoRL: 메타러닝으로 RL 규칙 자동 발견
 
 ## 관련
 
-[[메타러닝]], [[부트스트래핑]], [[discorl]], [[MuZero]]
+[[meta-learning|메타러닝]], [[bootstrapping|부트스트래핑]], [[discorl]], [[muzero|MuZero]]

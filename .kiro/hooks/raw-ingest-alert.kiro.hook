@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "새 원본 인제스트 알림",
+  "description": "01_raw/ 폴더에 새 파일이 생성되면 자동으로 인제스트 워크플로우를 제안합니다.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "01_raw/**/*.md",
+      "01_raw/**/*.pdf"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "01_raw/ 폴더에 새 파일이 감지되었습니다. 해당 파일을 확인하고 사용자에게 인제스트 여부를 물어보세요. 인제스트 진행 시 .kiro/steering/ingest.md 워크플로우를 따르세요."
+  }
+}

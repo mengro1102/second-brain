@@ -18,9 +18,18 @@ OUTPUT_DIR = Path("00_graphify-out")
 # 위키링크 패턴: [[페이지명]] 또는 [[페이지명|표시텍스트]]
 WIKILINK_RE = re.compile(r'\[\[([^\]|]+)(?:\|[^\]]+)?\]\]')
 
-# 인과 관계 패턴: [[A]] →(관계)→ [[B]]
-CAUSAL_RE = re.compile(
+# 인과 관계 패턴: →(관계)→ 를 포함하는 라인에서 좌우 위키링크 추출
+# 엄격한 패턴: [[A]] →(관계)→ [[B]]
+CAUSAL_STRICT_RE = re.compile(
     r'\[\[([^\]]+)\]\]\s*→\(([^)]+)\)→\s*\[\[([^\]]+)\]\]'
+)
+# 유연한 패턴: 좌측에 위키링크가 있고 →(관계)→ 뒤에 텍스트가 오는 경우
+CAUSAL_FLEX_RE = re.compile(
+    r'\[\[([^\]]+)\]\][^\n→]*→\(([^)]+)\)→\s*(.+?)(?:\n|$)'
+)
+# 역방향 유연 패턴: 좌측이 일반 텍스트이고 →(관계)→ 뒤에 위키링크가 오는 경우
+CAUSAL_REVERSE_RE = re.compile(
+    r'([^\n\[]+?)→\(([^)]+)\)→\s*\[\[([^\]]+)\]\]'
 )
 
 # YAML frontmatter 파싱 (간단 버전)
@@ -82,12 +91,12 @@ def extract_nodes_and_edges(wiki_dir: Path):
                     "weight": 1.0,
                 })
 
-        for causal_match in CAUSAL_RE.finditer(content):
+        for causal_match in CAUSAL_STRICT_RE.finditer(content):
             raw_cause = causal_match.group(1).strip()
             relation = causal_match.group(2).strip()
             raw_effect = causal_match.group(3).strip()
-            cause = resolve_target(raw_cause, alias_map)
-            effect = resolve_target(raw_effect, alias_map)
+            cause = resolve_target(raw_cause.split("|")[0], alias_map)
+            effect = resolve_target(raw_effect.split("|")[0], alias_map)
             edges.append({
                 "source": cause,
                 "target": effect,
@@ -96,6 +105,72 @@ def extract_nodes_and_edges(wiki_dir: Path):
                 "key": f"causal_{cause}_{effect}",
                 "weight": 2.0,
             })
+
+        # 유연한 인과 패턴: [[A]]의 설명 →(관계)→ 텍스트 (위키링크 없는 대상 포함)
+        for causal_match in CAUSAL_FLEX_RE.finditer(content):
+            raw_cause = causal_match.group(1).strip().split("|")[0]
+            relation = causal_match.group(2).strip()
+            right_side = causal_match.group(3).strip()
+            cause = resolve_target(raw_cause, alias_map)
+            # 우측에서 위키링크 추출 시도
+            right_links = WIKILINK_RE.findall(right_side)
+            if right_links:
+                for rl in right_links:
+                    effect = resolve_target(rl.strip(), alias_map)
+                    key = f"causal_{cause}_{effect}"
+                    if not any(e["key"] == key for e in edges):
+                        edges.append({
+                            "source": cause,
+                            "target": effect,
+                            "type": "causal",
+                            "relation": relation,
+                            "key": key,
+                            "weight": 2.0,
+                        })
+            else:
+                # 우측에 위키링크가 없으면 텍스트 자체를 대상으로 사용
+                # 신뢰도/출처 부분 제거
+                clean_right = right_side.strip()
+                # 줄 끝의 괄호 설명 제거
+                clean_right = re.sub(r'\s*\([^)]*\)\s*$', '', clean_right).strip()
+                if clean_right and cause:
+                    effect_slug = normalize_to_slug(clean_right)[:60]
+                    if effect_slug:
+                        effect = resolve_target(effect_slug, alias_map)
+                        if effect == effect_slug:
+                            effect = effect_slug  # 미해결 노드로 추가됨
+                        key = f"causal_{cause}_{effect}"
+                        if not any(e["key"] == key for e in edges):
+                            edges.append({
+                                "source": cause,
+                                "target": effect,
+                                "type": "causal",
+                                "relation": relation,
+                                "key": key,
+                                "weight": 2.0,
+                            })
+
+        # 역방향 유연 패턴: 일반 텍스트 →(관계)→ [[B]]
+        for causal_match in CAUSAL_REVERSE_RE.finditer(content):
+            left_side = causal_match.group(1).strip()
+            relation = causal_match.group(2).strip()
+            raw_effect = causal_match.group(3).strip().split("|")[0]
+            effect = resolve_target(raw_effect, alias_map)
+            # 좌측에서 위키링크 추출 시도
+            left_links = WIKILINK_RE.findall(left_side)
+            if left_links:
+                for ll in left_links:
+                    cause = resolve_target(ll.strip(), alias_map)
+                    key = f"causal_{cause}_{effect}"
+                    if not any(e["key"] == key for e in edges):
+                        edges.append({
+                            "source": cause,
+                            "target": effect,
+                            "type": "causal",
+                            "relation": relation,
+                            "key": key,
+                            "weight": 2.0,
+                        })
 
     return nodes, edges
 

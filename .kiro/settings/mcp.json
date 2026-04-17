@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "wiki-graph": {
+      "command": "wsl.exe",
+      "args": [
+        "bash",
+        "-c",
+        "cd /mnt/d/Obsidian/second-brain && /home/mrlee/.local/bin/uv run --with fastmcp python3 .scripts/wiki_graph_mcp.py"
+      ],
+      "env": {},
+      "disabled": false,
+      "autoApprove": [
+        "explain_node",
+        "find_path",
+        "causal_chain",
+        "graph_summary",
+        "rebuild_graph"
+      ]
+    }
+  }
+}

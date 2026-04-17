@@ -8,7 +8,7 @@ sources: [raw/papers/discovering-sota-rl-algorithms/discovering-sota-rl-algorith
 
 # DiscoRL
 
-메타러닝으로 자동 발견된 RL 규칙. [[Junhyuk Oh]] 등, [[Google DeepMind]].
+메타러닝으로 자동 발견된 RL 규칙. [[junhyuk-oh|Junhyuk Oh]] 등, [[google-deepmind|Google DeepMind]].
 
 ## Kernel
 
@@ -21,4 +21,4 @@ sources: [raw/papers/discovering-sota-rl-algorithms/discovering-sota-rl-algorith
 
 ## 출처
 
-- [[02_wiki/sources/discovering-sota-rl-algorithms]]
+- [[discovering-sota-rl-algorithms]]
