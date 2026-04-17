@@ -22,9 +22,14 @@ updated: 2026-04-15
 
 ## Sources (원본 요약)
 
-- [[02_wiki/sources/discovering-sota-rl-algorithms]] — Discovering SOTA RL Algorithms (Nature, 2025). 메타러닝으로 DiscoRL 자동 발견. Junhyuk Oh 등.
-- [[llm-wiki-truth-why-pkm-fails]] — 카파시도 못 말한 LLM-Wiki의 진실. PKM 실패 구조, 6개월 생존 설계. NEWIT 유튜브.
-- [[llm-wiki-karpathy-guide]] — LLM-Wiki 아이디어 가이드. Karpathy 원본 패턴 해설. GeekNews.
+- [[discovering-sota-rl-algorithms]] — Discovering SOTA RL Algorithms (Nature, 2025). 메타러닝으로 DiscoRL 자동 발견.
+- [[llm-wiki-truth-why-pkm-fails]] — 카파시도 못 말한 LLM-Wiki의 진실. PKM 실패 구조, 6개월 생존 설계.
+- [[llm-wiki-karpathy-guide]] — LLM-Wiki 아이디어 가이드. Karpathy 원본 패턴 해설.
+- [[gemma4-huggingface]] — Welcome Gemma 4. 네이티브 멀티모달 SLM, MoE, 256K 컨텍스트.
+- [[bpe-byte-pair-encoding]] — BPE 토큰화. 서브워드 병합 알고리즘.
+- [[gptq-awq-gguf-comparison]] — GPTQ/AWQ/GGUF 양자화 비교.
+- [[rattention-sliding-window]] — RAttention. SWA+RLA로 윈도우 512에서 Full Attention 매칭.
+- [[lora-paper-explained]] — LoRA 논문 해설. 저랭크 분해로 LLM 효율적 Fine-Tuning.
 
 ## Concepts (개념)
 
@@ -34,6 +39,14 @@ updated: 2026-04-15
 - [[rag]] — RAG. 질문 시 관련 문서를 검색해 LLM 컨텍스트에 주입.
 - [[mcp]] — MCP. LLM이 외부 도구를 직접 호출하는 표준 인터페이스.
 - [[pkm]] — PKM. 개인 지식 관리 시스템과 습관.
+- [[transformer]] — 트랜스포머. 셀프 어텐션 기반 현대 LLM 표준 아키텍처.
+- [[attention]] — 어텐션. Q·K·V 기반 문맥 파악 메커니즘.
+- [[quantization]] — 양자화. 가중치 정밀도를 낮춰 메모리 절감.
+- [[tokenization]] — 토큰화. 텍스트를 서브워드 단위로 분할.
+- [[embedding]] — 임베딩. 단어를 고차원 벡터 좌표로 변환.
+- [[sliding-window-attention]] — SWA. 고정 윈도우 내 어텐션으로 효율성 향상.
+- [[lora]] — LoRA. 저랭크 행렬만 학습하는 PEFT 기법.
+- [[fine-tuning]] — Fine-Tuning. 사전 학습 모델을 도메인/태스크에 맞게 추가 학습.
 
 ## Entities (인물·조직·모델·도구)
 

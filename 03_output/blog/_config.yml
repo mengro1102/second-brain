@@ -1,0 +1,114 @@
+# The Site Configuration
+theme: jekyll-theme-chirpy
+
+lang: ko-KR
+timezone: Asia/Seoul
+
+title: "이명로의 Deep Dive"
+tagline: "깊이 이해한 뒤 빠르게 실현하는 AI 연구자의 성장 기록"
+
+description: >-
+  AI 연구자 이명로의 세컨드 브레인. 논문 리뷰, 개념 딥다이브, 프로젝트 기록.
+
+url: "https://mengro1102.github.io"
+baseurl: ""
+
+github:
+  username: mengro1102
+
+social:
+  name: 이명로 (Myungro Lee)
+  email: "leeroy7321@gmail.com"
+  links:
+    - https://github.com/mengro1102
+
+avatar: "/assets/img/profile.jpg"
+
+toc: true
+theme_mode: light
+
+paginate: 10
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+  concepts:
+    output: true
+    sort_by: title
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: ""
+      type: concepts
+    values:
+      layout: page
+      permalink: /concepts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+  math_engine: mathjax
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths: []

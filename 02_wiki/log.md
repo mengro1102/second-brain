@@ -43,3 +43,40 @@ updated: 2026-04-15
 - .scripts/build_graph.py에 GRAPH_REPORT.md 자동 생성 기능 추가
 - 현재 그래프: 27 노드, 63 엣지 (위키링크 61 + 인과 2), 미해결 노드 13개
 - 모든 steering 스킬의 경로 업데이트 완료
+
+## [2026-04-15] ingest | Gemma 4 블로그 관련 4개 소스 인제스트
+
+- 원본 1: `01_raw/transcripts/2026-04-15_Welcome Gemma 4...` (Gemma 4 HF 블로그)
+- 원본 2: `01_raw/transcripts/2026-04-15_What is BPE...` (BPE 토큰화)
+- 원본 3: `01_raw/transcripts/2026-04-15_6.3.2 GPTQ, AWQ, GGUF 비교.md` (양자화 비교)
+- 원본 4: `01_raw/transcripts/2026-04-15_RAttention...` + PDF (RAttention 논문)
+- 생성된 페이지:
+  - sources: 4개 (gemma4-huggingface, bpe-byte-pair-encoding, gptq-awq-gguf-comparison, rattention-sliding-window)
+  - concepts: 6개 (transformer, attention, quantization, tokenization, embedding, sliding-window-attention)
+- 인과 관계 callout 6개 삽입
+- 캡처 맥락: Gemma 4 블로그 포스트 작성을 위한 참조 소스 수집
+
+## [2026-04-15] output | Gemma 4를 이해하는 과정 블로그 포스트 생성
+
+- 유형: 개념 딥다이브
+- 저장: 03_output/blog/gemma4-understanding.md
+- 참조 wiki 페이지: gemma4-huggingface, bpe-byte-pair-encoding, gptq-awq-gguf-comparison, rattention-sliding-window, tokenization, embedding, attention, transformer, quantization, sliding-window-attention
+- 구조: 7개 챕터 (토큰화/임베딩 → 트랜스포머/어텐션 → 학습 파이프라인 → 양자화/SLM → 멀티모달 → Gemma 4 해부 → 결론)
+
+## [2026-04-15] output | Gemma 4 블로그 — Jekyll 구조 + 개념 링크 포스트 생성
+
+- Jekyll 호환 구조 세팅: _config.yml, _posts/, _concepts/ 컬렉션
+- 메인 포스트: _posts/2026-04-15-gemma4-understanding.md (키워드 링크 삽입)
+- 개념 독립 포스트 6개: tokenization, embedding, attention, transformer, quantization, sliding-window-attention
+- 전파거북이 스타일: 메인 포스트 → 개념 포스트 → 상호 링크 체인
+- GitHub Pages 이식 준비 완료: git push만 하면 배포
+
+## [2026-04-16] ingest | LoRA 논문 쉽게 설명하기
+
+- 원본: `01_raw/transcripts/2026-04-16_LoRA 논문 쉽게 설명하기.md`
+- 생성된 페이지:
+  - `02_wiki/sources/lora-paper-explained.md` — 소스 요약
+  - `02_wiki/concepts/lora.md` — LoRA 개념 (저랭크 분해, PEFT, Rank, Freeze 등)
+  - `02_wiki/concepts/fine-tuning.md` — Fine-Tuning 개념 (유형 비교 테이블)
+- 인과 관계 callout 4개 삽입
+- 캡처 맥락: LLM Fine-Tuning 흥미, 로컬 오픈소스 LLM 파인튜닝 사전학습, EH R&C 도메인 특화 LLM 구축 탐색
