@@ -1,7 +1,7 @@
 ---
 title: 위키 인덱스
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-30
 ---
 
 # 위키 인덱스
@@ -30,6 +30,19 @@ updated: 2026-04-15
 - [[gptq-awq-gguf-comparison]] — GPTQ/AWQ/GGUF 양자화 비교.
 - [[rattention-sliding-window]] — RAttention. SWA+RLA로 윈도우 512에서 Full Attention 매칭.
 - [[lora-paper-explained]] — LoRA 논문 해설. 저랭크 분해로 LLM 효율적 Fine-Tuning.
+- [[nemotron-3-super]] — NVIDIA Nemotron 3 Super. Llama 3.1 8B 기반 지식 증류+NAS+정렬 SLM.
+- [[hermes-agent]] — Hermes Agent. NousResearch 오픈소스 AI 에이전트, 메모리 기반.
+- [[agentic-researcher]] — Agentic Researcher. AI 도구 활용 연구 방법론.
+- [[auto-research-claw]] — AutoResearchClaw. 완전 자율 AI 연구 에이전트.
+- [[openharness]] — OpenHarness. Claude Code보다 44배 가벼운 에이전트 하네스.
+- [[mirofish]] — MiroFish. 집단 지능 시뮬레이션 엔진.
+- [[gemma4-visual-guide]] — Gemma 4 비주얼 가이드. Local-Global Attention, GQA, Shared KV Cache.
+- [[parcae-architecture]] — 파르카에. 2배 크기 트랜스포머와 동등 성능의 대안 아키텍처.
+- [[claude-code-prompt-caching]] — Claude Code 프롬프트 캐싱. 에이전트 아키텍처 최적화 핵심.
+- [[qwen36-max-preview]] — Qwen3.6-Max-Preview. 프로그래밍 벤치마크 6관왕.
+- [[unist-xai-data-annotation]] — UNIST XAI. 학습 데이터 설명문으로 블랙박스 해독.
+- [[cursor-ai-acquisition]] — 일론 머스크의 커서 AI 80조 원 인수.
+- [[kimi-k25-visual-agentic]] — Kimi K2.5. 시각적 에이전틱 지능 멀티모달 모델.
 
 ## Concepts (개념)
 
@@ -47,6 +60,7 @@ updated: 2026-04-15
 - [[sliding-window-attention]] — SWA. 고정 윈도우 내 어텐션으로 효율성 향상.
 - [[lora]] — LoRA. 저랭크 행렬만 학습하는 PEFT 기법.
 - [[fine-tuning]] — Fine-Tuning. 사전 학습 모델을 도메인/태스크에 맞게 추가 학습.
+- [[ai-agent]] — AI 에이전트. LLM이 도구를 호출하고 자율적으로 태스크를 수행하는 시스템.
 
 ## Entities (인물·조직·모델·도구)
 

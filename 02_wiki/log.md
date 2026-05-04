@@ -80,3 +80,9 @@ updated: 2026-04-15
   - `02_wiki/concepts/fine-tuning.md` — Fine-Tuning 개념 (유형 비교 테이블)
 - 인과 관계 callout 4개 삽입
 - 캡처 맥락: LLM Fine-Tuning 흥미, 로컬 오픈소스 LLM 파인튜닝 사전학습, EH R&C 도메인 특화 LLM 구축 탐색
+
+## [2026-04-30] ingest | 신규 raw 데이터 13건 일괄 인제스트
+
+- 주제별: Nemotron 3 Super, Hermes Agent, AI 연구 에이전트(3건), MiroFish, Gemma 4 비주얼 가이드, 파르카에, Claude Code 캐싱, Qwen3.6, UNIST XAI, 커서 AI 인수, Kimi K2.5 논문
+- 생성: sources 13개, concepts 1개(ai-agent)
+- 캡처 맥락: AI 에이전트 생태계, SLM 효율화, LLM 경쟁 동향, 연구 자동화 도구 탐색
